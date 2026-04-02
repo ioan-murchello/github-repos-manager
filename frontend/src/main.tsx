@@ -1,0 +1,25 @@
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+import {BrowserRouter} from 'react-router-dom'
+import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
+
+const client = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+            staleTime: 1000 * 60 * 5
+        }
+    }
+})
+
+createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+        <BrowserRouter>
+            <QueryClientProvider client={client}>
+                <App/>
+            </QueryClientProvider>
+        </BrowserRouter>
+    </StrictMode>,
+)

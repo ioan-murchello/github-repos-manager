@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer components {
+  /* Glassmorphism utility with light background */
+  .bg-glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/20 shadow-xl;
+    /* Required for Safari support */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Global Box Sizing Reset */
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome */
+  -moz-box-sizing: border-box; /* Firefox */
+  box-sizing: border-box; /* Standard */
+}
+
+/*------ CUSTOM SCROLLBAR (Webkit: Chrome, Safari, Edge, Opera) ------*/
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  /* Adds blur effect to the scrollbar thumb itself */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Scrollbar for Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* Glassmorphism Class with full vendor support */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+
+  /* Backdrop blur effect */
+  -webkit-backdrop-filter: blur(12px); /* Safari & Chrome */
+  backdrop-filter: blur(12px); /* Standard */
+
+  /* Border and Outlines */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Box Shadow with legacy support */
+  -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Border Radius for older engines */
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+
+  /* Ensures background doesn't bleed behind the border */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
