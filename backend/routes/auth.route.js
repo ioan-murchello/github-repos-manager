@@ -20,7 +20,7 @@ router.get("/check", (req, res) => {
   if (req.isAuthenticated() && req.user) {
     res.status(200).json({ user: req.user });
   } else {
-    res.status(200).json({ user: null }); // 200 OK, але юзера немає
+    res.status(200).json({ user: null });  
   }
 });
 
