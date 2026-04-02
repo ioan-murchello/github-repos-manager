@@ -23,7 +23,7 @@ console.log(__dirname, 'dirname')
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://github-repos-manager.onrender.com",
     withCredentials: true, // Adjust this to match your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
@@ -48,7 +48,6 @@ app.get("", (req,res) => {
   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
 })
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+app.listen(PORT, () => { 
   connectDb();
 });
