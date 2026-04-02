@@ -5,7 +5,6 @@ const NotFoundPage = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4 pt-6">
       <div className="relative">
-        {/* Велика іконка GitHub з ефектом "збою" */}
         <FaGithub className="text-7xl sm:text-9xl animate-pulse" />
         <FaExclamationTriangle className="absolute bottom-0 right-0 text-2xl sm:text-4xl  text-yellow-500" />
       </div>
@@ -29,7 +28,6 @@ const NotFoundPage = () => {
         Back to Dashboard
       </Link>
 
-      {/* Декоративний елемент коду */}
       <div className="mt-12 p-4 bg-slate-900/50 rounded border border-slate-800 font-mono text-xs text-blue-400">
         <p>$ git checkout main</p>
         <p className="text-red-400">

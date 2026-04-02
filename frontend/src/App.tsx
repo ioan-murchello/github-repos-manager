@@ -9,8 +9,7 @@ import LikesPage from "./pages/LikesPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./hooks/useAuth.tsx";
-import Spinner from "./components/Spinner.tsx";
-// import { useAuth } from "./store/authStore.ts";
+import Spinner from "./components/Spinner.tsx"; 
 
 function App() {
   const { user, isLoading } = useAuth();
